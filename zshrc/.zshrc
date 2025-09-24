@@ -20,6 +20,7 @@ source $ZSH/oh-my-zsh.sh
 alias dc="docker compose"
 alias up="sudo dnf up -y"
 alias mockdata="dc stop mockdata && dc build mockdata && dc up -d"
+alias ls="eza"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
