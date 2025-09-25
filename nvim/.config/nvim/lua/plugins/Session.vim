@@ -14,12 +14,12 @@ else
   set shortmess=aoO
 endif
 badd +1 ~/dotfiles/nvim/.config/nvim/lua/plugins/telescope.lua
-badd +6 ~/dotfiles/nvim/.config/nvim/lua/plugins/lazygit.lua
+badd +26 ~/dotfiles/nvim/.config/nvim/lua/plugins/treesitter.lua
+badd +11 ~/dotfiles/nvim/.config/nvim/lua/plugins/vim-rooter.lua
 argglobal
 %argdel
-edit ~/dotfiles/nvim/.config/nvim/lua/plugins/lazygit.lua
+edit ~/dotfiles/nvim/.config/nvim/lua/plugins/treesitter.lua
 argglobal
-balt ~/dotfiles/nvim/.config/nvim/lua/plugins/telescope.lua
 setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
@@ -30,12 +30,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 6 - ((5 * winheight(0) + 33) / 67)
+let s:l = 26 - ((25 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 6
-normal! 02|
+keepjumps 26
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
