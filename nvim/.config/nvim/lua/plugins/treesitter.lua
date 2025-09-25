@@ -13,12 +13,13 @@ return {
           "css",
           "scss",
           "javascript",
+          "java",
           "typescript",
           "json",
           "lua",
         },
         highlight = { enable = true },
-        indent = { enable = false },
+        indent = { enable = true },
       })
     end
   }
