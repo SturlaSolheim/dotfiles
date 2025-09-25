@@ -9,6 +9,8 @@ vim.wo.relativenumber = true
 
 vim.opt.wrap = false
 
+vim.opt.autochdir = true
+
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
