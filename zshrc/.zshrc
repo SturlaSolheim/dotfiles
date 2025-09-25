@@ -7,6 +7,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:/home/local.husbanken.no/hdst/tools"
 
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export GIT_EDITOR=nvim
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
