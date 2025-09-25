@@ -7,6 +7,8 @@ vim.g.mapleader = " "
 vim.opt.swapfile = false
 vim.wo.relativenumber = true
 
+vim.opt.wrap = false
+
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
