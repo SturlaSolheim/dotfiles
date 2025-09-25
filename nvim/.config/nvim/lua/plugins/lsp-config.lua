@@ -10,6 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
+      ensure_installed = {"jdtls"},
       auto_install = true,
     },
   },
@@ -34,6 +35,10 @@ return {
         capabilities = capabilities,
       })
       lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+
+      lspconfig.jdtls.setup({
         capabilities = capabilities
       })
 
