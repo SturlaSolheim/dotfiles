@@ -1,13 +1,13 @@
 return {
   {
-    "williambuman/mason.nvim",
+    "williamboman/mason.nvim",
     lazy = false,
     config = function()
       require("mason").setup()
     end,
   },
   {
-    "williambuman/mason-lspconfig.nvim",
+    "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
       ensure_installed = {"jdtls"},
