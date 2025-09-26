@@ -10,9 +10,34 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
-      ensure_installed = {"jdtls"},
+      ensure_installed = {"lua_ls"},
       auto_install = true,
     },
+  },
+  {
+    "nvim-java/nvim-java",
+    dependencies = {
+      "nvim-java/lua-async-await",
+      "nvim-java/nvim-java-refactor",
+      "nvim-java/nvim-java-core",
+      "nvim-java/nvim-java-test",
+      "nvim-java/nvim-java-dap",
+      "MunifTanjim/nui.nvim",
+      "neovim/nvim-lspconfig",
+      "mfussenegger/nvim-dap",
+      {
+        "williamboman/mason.nvim",
+        opts = {
+          registries = {
+            "github:nvim-java/mason-registry",
+            "github:mason-org/mason-registry",
+          },
+        },
+      },
+    },
+    config = function()
+      require("java").setup()
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -26,21 +51,7 @@ return {
         cmp_nvim_lsp.default_capabilities()
       )
       
-      -- Using the new vim.lsp.config API instead of lspconfig
-      vim.lsp.config.tailwindcss = {
-        capabilities = capabilities,
-        cmd = { "tailwindcss-language-server", "--stdio" },
-        filetypes = { "html", "css", "scss", "javascript", "typescript", "javascriptreact", "typescriptreact", "vue" },
-        root_markers = { "tailwind.config.js", "tailwind.config.ts", "tailwind.config.cjs" }
-      }
-      
-      vim.lsp.config.ruby_lsp = {
-        capabilities = capabilities,
-        cmd = { "ruby-lsp" },
-        filetypes = { "ruby" },
-        root_markers = { "Gemfile", ".git" }
-      }
-      
+      -- Lua LSP configuration
       vim.lsp.config.lua_ls = {
         capabilities = capabilities,
         cmd = { "lua-language-server" },
@@ -62,13 +73,6 @@ return {
             }
           }
         }
-      }
-      
-      vim.lsp.config.jdtls = {
-        capabilities = capabilities,
-        cmd = { "jdtls" },
-        filetypes = { "java", "kotlin" },
-        root_markers = { "build.gradle", "build.gradle.kts", "pom.xml", ".git" }
       }
       
       -- Set up keymaps
