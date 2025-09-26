@@ -9,6 +9,9 @@ return {
   lazy = false, -- neo-tree will lazily load itself
   config = function()
     require("neo-tree").setup({
+      window = {
+      auto_expand_width = true
+      },
       filesystem = {
         follow_current_file = {
           enabled = true, -- This will find and focus the file in the active buffer

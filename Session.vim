@@ -13,10 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +10 ~/dotfiles/nvim/.config/nvim/lua/plugins/lsp-config.lua
+badd +1 ~/git/lanogtilskudd-tjenester-vinnbingateway/vinnbingw-dokumentproduksjon/vinnbingw-dokumentproduksjon-impl/src/main/java/no/husbanken/laneforvaltning/vinnbingateway/dokumentproduksjon/flyter/GenererSaksdokumentEkspeder.java
+badd +1 nvim/.config/nvim/lua/plugins/neotree.lua
 argglobal
 %argdel
-edit ~/dotfiles/nvim/.config/nvim/lua/plugins/lsp-config.lua
+edit nvim/.config/nvim/lua/plugins/neotree.lua
 argglobal
 setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
@@ -28,12 +29,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 38 - ((37 * winheight(0) + 33) / 67)
+let s:l = 1 - ((0 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 38
-normal! 036|
+keepjumps 1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
