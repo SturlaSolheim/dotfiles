@@ -13,10 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +12 ~/dotfiles/zshrc/.zshrc
+badd +0 ~/dotfiles/ghostty/.config/ghostty/config
 argglobal
 %argdel
-edit ~/dotfiles/zshrc/.zshrc
+edit ~/dotfiles/ghostty/.config/ghostty/config
 argglobal
 setlocal foldmethod=manual
 setlocal foldexpr=0
@@ -28,12 +28,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 12 - ((11 * winheight(0) + 24) / 49)
+let s:l = 1 - ((0 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 12
-normal! 018|
+keepjumps 1
+normal! 017|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

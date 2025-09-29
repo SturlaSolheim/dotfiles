@@ -10,6 +10,7 @@ export PATH="$PATH:/home/local.husbanken.no/hdst/tools"
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export GIT_EDITOR=nvim
 export EDITOR=nvim
+export GHOSTTY_RESOURCES=~/.config/ghostty/themes
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
