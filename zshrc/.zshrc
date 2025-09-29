@@ -9,6 +9,7 @@ export PATH="$PATH:/home/local.husbanken.no/hdst/tools"
 
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export GIT_EDITOR=nvim
+export EDITOR=nvim
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -22,6 +23,17 @@ alias dc="docker compose"
 alias up="sudo dnf up -y"
 alias mockdata="dc stop mockdata && dc build mockdata && dc up -d"
 alias ls="eza"
+alias vim="nvim"
+
+
+# Yazi config
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
