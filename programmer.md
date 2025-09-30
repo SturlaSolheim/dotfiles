@@ -5,7 +5,7 @@ todo: Lag et script som installerer og oppdaterer alt dette
 
 ## Programmer fra package-managers
 
-[
+[\
 eza,\
 fzf,\
 gh,\
@@ -19,8 +19,8 @@ wget,\
 yazi,\
 zsh,\
 zsh-autosuggestions = {\
-    mac = brew\
-    linux = git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions,\
+  mac = brew\
+  linux = git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions,\
 }\
 displaylink,\
 ghostty,\
@@ -36,9 +36,9 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 ## Ting som skal installeres på andre måter
 
 font-jetbrains-mono-nerd-font = {\
-    https://www.jetbrains.com/lp/mono/#how-to-install\
+  https://www.jetbrains.com/lp/mono/#how-to-install\
 }\
 
 oc = {\
-    todo: finn linken for å laste ned oc cli\
+  todo: finn linken for å laste ned oc cli\
 }\
