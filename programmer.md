@@ -38,3 +38,7 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 font-jetbrains-mono-nerd-font = {
     https://www.jetbrains.com/lp/mono/#how-to-install
 }
+
+oc = {
+    todo: finn linken for å laste ned oc cli
+}
