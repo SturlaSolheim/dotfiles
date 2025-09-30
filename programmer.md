@@ -18,15 +18,23 @@ tree-sitter,
 wget,
 yazi,
 zsh,
-zsh-autosuggestions
+zsh-autosuggestions = {
+    mac = brew
+    linux = git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions,
+}
 displaylink,
-font-jetbrains-mono-nerd-font,
 ghostty,
 ]
 
 ## Programmer fra git
+
 [
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions,
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm,
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab,
 ]
+
+## Ting som skal installeres på andre måter
+
+font-jetbrains-mono-nerd-font = {
+    https://www.jetbrains.com/lp/mono/#how-to-install
+}
