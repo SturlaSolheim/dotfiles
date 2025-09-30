@@ -13,14 +13,19 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +20 programmer.md
-badd +10 README.md
+badd +8 ~/Documents/notater/privat/spill/Top50Spill.md
+badd +2 ~/Documents/notater/privat/spill/spill/outerWilds.md
+badd +22 ~/Documents/notater/privat/spill/SpillJegSpiller.md
+badd +11 ~/Documents/notater/privat/abbonnomenter.md
+badd +1 nvim/.config/nvim/lua/plugins/lsp-config.lua
+badd +1 ~/.dotfiles/nvim/.config/nvim/lua/plugins/oil.lua
+badd +9 ~/.dotfiles/nvim/.config/nvim/lua/plugins/markdown.lua
 argglobal
 %argdel
-edit programmer.md
+edit nvim/.config/nvim/lua/plugins/lsp-config.lua
 argglobal
 setlocal foldmethod=manual
-setlocal foldexpr=0
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -29,12 +34,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 20 - ((19 * winheight(0) + 29) / 59)
+let s:l = 1 - ((0 * winheight(0) + 31) / 63)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 20
-normal! 02|
+keepjumps 1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

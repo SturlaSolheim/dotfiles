@@ -24,6 +24,7 @@ zsh-autosuggestions = {\
 }\
 displaylink,\
 ghostty,\
+btop,\
 ]\
 
 ## Programmer fra git
