@@ -1,3 +1,5 @@
+
+astroterm --color -q -u  --speed 1000 --fps 120 --city Oslo
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -27,6 +29,7 @@ alias ls="eza"
 alias vim="nvim"
 
 
+
 # Yazi config
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -38,3 +41,5 @@ function y() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
