@@ -13,10 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
+badd +28 ~/dotfiles/programmer.md
+badd +37 ideavim/.ideavimrc
 argglobal
 %argdel
+edit ideavim/.ideavimrc
 argglobal
-enew
+balt ~/dotfiles/programmer.md
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -25,6 +28,14 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldenable
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 37 - ((36 * winheight(0) + 38) / 76)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 37
+normal! 039|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
