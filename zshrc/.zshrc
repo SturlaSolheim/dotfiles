@@ -17,6 +17,13 @@ export GHOSTTY_RESOURCES=~/.config/ghostty/themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
+
+
+
+
+
+
+
 plugins=(git fzf zsh-autosuggestions fzf-tab oc)
 
 source $ZSH/oh-my-zsh.sh
@@ -30,6 +37,21 @@ alias vim="nvim"
 alias lg="lazygit"
 
 
+# Enable vim mode
+bindkey -v
+
+# Reduce the delay when switching modes (default is 0.4s)
+export KEYTIMEOUT=1
+
+# Show vim mode in your prompt (optional)
+# This updates the prompt to show INSERT or NORMAL mode
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # Yazi config
 function y() {
