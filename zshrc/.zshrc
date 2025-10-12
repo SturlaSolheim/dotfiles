@@ -27,6 +27,7 @@ alias up="sudo dnf up -y"
 alias mockdata="dc stop mockdata && dc build mockdata && dc up -d"
 alias ls="eza"
 alias vim="nvim"
+alias lg="lazygit"
 
 
 

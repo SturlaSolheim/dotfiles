@@ -13,11 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 aerospace/.config/aerospace/aerospace.toml
+badd +1 zshrc/.zshrc
 argglobal
 %argdel
-$argadd aerospace/.config/aerospace/aerospace.toml
-edit aerospace/.config/aerospace/aerospace.toml
+$argadd zshrc/.zshrc
+edit zshrc/.zshrc
 argglobal
 setlocal foldmethod=manual
 setlocal foldexpr=0
@@ -29,12 +29,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 29) / 58)
+let s:l = 30 - ((25 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 0
+keepjumps 30
+normal! 017|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
