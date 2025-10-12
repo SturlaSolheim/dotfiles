@@ -16,6 +16,10 @@ key-mapping.preset = 'qwerty'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+on-window-detected = [
+    { run = 'layout tiling' }
+]
+
 [gaps]
 inner.horizontal = 10
 inner.vertical =   10
@@ -63,6 +67,8 @@ alt-comma = 'layout accordion horizontal vertical'
 
 alt-shift-space = 'layout floating tiling'
 alt-f = 'fullscreen'
+
+
 
 # Terminal
 alt-enter = 'exec-and-forget open -n -a "ghostty"'
