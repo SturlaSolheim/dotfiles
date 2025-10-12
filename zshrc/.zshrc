@@ -16,14 +16,6 @@ export GHOSTTY_RESOURCES=~/.config/ghostty/themes
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-
-
-
-
-
-
-
-
 plugins=(git fzf zsh-autosuggestions fzf-tab oc)
 
 source $ZSH/oh-my-zsh.sh
@@ -35,6 +27,7 @@ alias mockdata="dc stop mockdata && dc build mockdata && dc up -d"
 alias ls="eza"
 alias vim="nvim"
 alias lg="lazygit"
+alias nxdw="sudo darwin-rebuild switch --flake ~/nix"
 
 
 # Enable vim mode
