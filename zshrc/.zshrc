@@ -27,7 +27,9 @@ alias mockdata="dc stop mockdata && dc build mockdata && dc up -d"
 alias ls="eza"
 alias vim="nvim"
 alias lg="lazygit"
+alias ld="lazydocker"
 alias nxdw="sudo darwin-rebuild switch --flake ~/nix"
+alias dagens="~/scripts/dagligNotat.sh"
 
 
 # Enable vim mode

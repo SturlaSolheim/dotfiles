@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/.dotfiles
+cd ~/dotfiles
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,14 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +47 ~/nix/modules/applications.nix
-badd +1 ~/nix/modules/system.nix
-badd +13 ~/nix/modules/systemDefaults.nix
-badd +19 aerospace/.config/aerospace/aerospace.toml
+badd +31 zshrc/.zshrc
 argglobal
 %argdel
-$argadd ~/nix/modules/applications.nix
-edit ~/nix/modules/applications.nix
+$argadd zshrc/.zshrc
+edit zshrc/.zshrc
 argglobal
 setlocal foldmethod=manual
 setlocal foldexpr=0
@@ -32,12 +29,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 47 - ((16 * winheight(0) + 13) / 27)
+let s:l = 31 - ((14 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 47
-normal! 01|
+keepjumps 31
+normal! 039|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
