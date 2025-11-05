@@ -9,6 +9,8 @@ vim.wo.relativenumber = true
 
 vim.opt.wrap = false
 
+vim.api.nvim_create_autocmd("InsertLeave", { command = "silent! wall" })
+
 vim.opt.autochdir = true
 
 -- Navigate vim panes better

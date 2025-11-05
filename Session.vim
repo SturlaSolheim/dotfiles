@@ -13,14 +13,16 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +31 zshrc/.zshrc
+badd +4 ~/Dokumenter/notater/jobb/SLT-1512-dokumentmysterie.md
+badd +14 ~/Dokumenter/notater/jobb/forkorteNedbetalingstid.md
+badd +0 nvim/.config/nvim/lua/vim-options.lua
 argglobal
 %argdel
-$argadd zshrc/.zshrc
-edit zshrc/.zshrc
+edit nvim/.config/nvim/lua/vim-options.lua
 argglobal
+balt ~/Dokumenter/notater/jobb/forkorteNedbetalingstid.md
 setlocal foldmethod=manual
-setlocal foldexpr=0
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -29,12 +31,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 31 - ((14 * winheight(0) + 8) / 17)
+let s:l = 11 - ((10 * winheight(0) + 38) / 76)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 31
-normal! 039|
+keepjumps 11
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
