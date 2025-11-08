@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles
+cd ~/.dotfiles
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,14 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +4 ~/Dokumenter/notater/jobb/SLT-1512-dokumentmysterie.md
-badd +14 ~/Dokumenter/notater/jobb/forkorteNedbetalingstid.md
-badd +0 nvim/.config/nvim/lua/vim-options.lua
+badd +1 nvim/.config/nvim/lua/plugins/lsp-config.lua
 argglobal
 %argdel
-edit nvim/.config/nvim/lua/vim-options.lua
+$argadd nvim/.config/nvim/lua/plugins/lsp-config.lua
+edit nvim/.config/nvim/lua/plugins/lsp-config.lua
 argglobal
-balt ~/Dokumenter/notater/jobb/forkorteNedbetalingstid.md
 setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
@@ -31,12 +29,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 11 - ((10 * winheight(0) + 38) / 76)
+let s:l = 35 - ((33 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
-normal! 0
+keepjumps 35
+normal! 09|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
