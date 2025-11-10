@@ -18,11 +18,9 @@ return {
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require("lspconfig")
-      
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
-      
       lspconfig.gopls.setup({
         capabilities = capabilities,
         settings = {
@@ -35,7 +33,6 @@ return {
           },
         },
       })
-      
       -- Configure diagnostics
       vim.diagnostic.config({
         virtual_text = true,
@@ -44,11 +41,9 @@ return {
         update_in_insert = false,
         severity_sort = false,
       })
-      
       -- Show line diagnostics automatically in hover window
       vim.o.updatetime = 250
       vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
-      
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
       vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})
