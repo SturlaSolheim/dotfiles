@@ -1,0 +1,83 @@
+# -- feeds ---------------------------------------------------------------------
+
+auto-reload yes
+reload-time 120
+reload-threads 4
+download-retries 4
+download-timeout 10
+prepopulate-query-feeds yes
+
+
+# -- display -------------------------------------------------------------------
+
+show-read-feeds yes
+feed-sort-order unreadarticlecount-asc
+
+color info default default reverse
+color listnormal white default
+color listnormal_unread yellow default
+color listfocus blue default reverse bold
+color listfocus_unread blue default reverse bold
+
+text-width 80
+
+
+
+# -- navigation ----------------------------------------------------------------
+
+goto-next-feed no
+
+browser "w3m %u"
+
+# Vim-like navigation
+bind-key j down feedlist
+bind-key k up feedlist
+bind-key g home feedlist
+bind-key G end feedlist
+bind-key h quit feedlist
+bind-key l open feedlist
+bind-key ^D pagedown feedlist
+bind-key ^U pageup feedlist
+
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key g home articlelist
+bind-key G end articlelist
+bind-key h quit articlelist
+bind-key l open articlelist
+bind-key ^D pagedown articlelist
+bind-key ^U pageup articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+
+bind-key j down article
+bind-key k up article
+bind-key g home article
+bind-key G end article
+bind-key h quit article
+bind-key l open article
+bind-key ^D pagedown article
+bind-key ^U pageup article
+
+# Additional vim-like bindings
+bind-key d delete-article articlelist
+bind-key r reload-all
+bind-key R reload-all
+bind-key n next-unread
+bind-key N prev-unread
+bind-key o open-in-browser
+bind-key O open-in-browser-and-mark-read
+
+
+# -- bookmarks -----------------------------------------------------------------
+
+bookmark-cmd ~/.newsbeuter/bookmark.sh
+bookmark-interactive no
+bookmark-autopilot yes
+
+
+# -- misc ----------------------------------------------------------------------
+
+unbind-key C feedlist
+confirm-exit no
+cleanup-on-quit no
