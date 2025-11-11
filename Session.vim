@@ -13,11 +13,16 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +50 tmux/.tmux.conf
+badd +46 ~/Dokumenter/notater/jobb/forkorteNedbetalingstid.md
+badd +1 ~/Dokumenter/notater/privat/økonomi/abbonnomenter.md
+badd +160 ~/Dokumenter/notater/privat/musikk/albumomtaler.md
+badd +37 ~/.zshrc
+badd +9 ghostty/.config/ghostty/config
 argglobal
 %argdel
-edit tmux/.tmux.conf
+edit ghostty/.config/ghostty/config
 argglobal
+balt ~/Dokumenter/notater/jobb/forkorteNedbetalingstid.md
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -28,12 +33,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 50 - ((38 * winheight(0) + 38) / 76)
+let s:l = 9 - ((8 * winheight(0) + 37) / 74)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 50
-normal! 027|
+keepjumps 9
+normal! 020|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
