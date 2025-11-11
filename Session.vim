@@ -13,14 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +64 tmux/.tmux.conf
-badd +1 tmux/.tmux.conf_hidden_message
-badd +1 ~/Dokumenter/notater/jobb/slt-1410-filtrere-brevtype.md
+badd +50 tmux/.tmux.conf
 argglobal
 %argdel
 edit tmux/.tmux.conf
 argglobal
-balt ~/Dokumenter/notater/jobb/slt-1410-filtrere-brevtype.md
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -31,12 +28,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 47 - ((31 * winheight(0) + 29) / 58)
+let s:l = 50 - ((38 * winheight(0) + 38) / 76)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 47
-normal! 025|
+keepjumps 50
+normal! 027|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
