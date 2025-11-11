@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles
+cd ~/.dotfiles
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,18 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +46 ~/Dokumenter/notater/jobb/forkorteNedbetalingstid.md
-badd +1 ~/Dokumenter/notater/privat/økonomi/abbonnomenter.md
-badd +160 ~/Dokumenter/notater/privat/musikk/albumomtaler.md
-badd +37 ~/.zshrc
-badd +9 ghostty/.config/ghostty/config
+badd +10 nvim/.config/nvim/lua/plugins/catpuccin.lua
 argglobal
 %argdel
-edit ghostty/.config/ghostty/config
+edit nvim/.config/nvim/lua/plugins/catpuccin.lua
 argglobal
-balt ~/Dokumenter/notater/jobb/forkorteNedbetalingstid.md
 setlocal foldmethod=manual
-setlocal foldexpr=0
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -33,12 +28,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 37) / 74)
+let s:l = 10 - ((9 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9
-normal! 020|
+keepjumps 10
+normal! 05|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
