@@ -1,5 +1,4 @@
 
-astroterm --color -q -u  --speed 1000 --fps 120 --city Oslo
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -30,6 +29,7 @@ alias lg="lazygit"
 alias ld="lazydocker"
 alias nxdw="sudo darwin-rebuild switch --flake ~/nix"
 alias dagens="~/scripts/dagligNotat.sh"
+alias q!="exit"
 
 
 # Enable vim mode

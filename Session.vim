@@ -13,11 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 newsboat/.newsboat/config
+badd +0 tmux/.tmux.conf
 argglobal
 %argdel
-$argadd newsboat/.newsboat/config
-edit newsboat/.newsboat/config
+edit tmux/.tmux.conf
 argglobal
 setlocal foldmethod=manual
 setlocal foldexpr=0
@@ -29,11 +28,11 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 31 - ((18 * winheight(0) + 14) / 28)
+let s:l = 66 - ((65 * winheight(0) + 38) / 77)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 31
+keepjumps 66
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

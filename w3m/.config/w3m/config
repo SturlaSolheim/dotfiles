@@ -1,0 +1,66 @@
+# w3m configuration file
+
+# Image display settings
+# Enable inline image display
+display_image 1
+
+# Auto detect image type
+auto_image 1
+
+# Maximum image size (0 = no limit)
+image_scale 100
+
+# Image display method
+# ghostty supports kitty graphics protocol
+# w3m will auto-detect the best method
+ext_image_viewer 0
+
+# General settings
+# Use external browser for links (optional)
+# extbrowser firefox
+
+# Tab settings
+tabstop 8
+indent_incr 4
+
+# Display settings
+display_link 1
+display_link_number 0
+
+# Color settings
+color 1
+basic_color terminal
+anchor_color blue
+image_color green
+form_color red
+mark_color cyan
+bg_color terminal
+active_style 1
+
+# Cookie settings
+use_cookie 1
+accept_cookie 1
+cookie_reject_domains
+cookie_accept_domains
+
+# SSL settings
+ssl_verify_server 1
+
+# Navigation settings
+keymap_file keymap
+
+# Editor
+editor nvim
+
+# Search settings
+wrap_search 1
+ignorecase_search 1
+
+# Character encoding
+display_charset UTF-8
+document_charset UTF-8
+system_charset UTF-8
+
+# Misc
+confirm_qq 0
+close_tab_back 1
