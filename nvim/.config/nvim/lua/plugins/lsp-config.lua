@@ -17,11 +17,13 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({
+
+      -- Use new vim.lsp.config API
+      vim.lsp.config('lua_ls', {
         capabilities = capabilities
       })
-      lspconfig.gopls.setup({
+
+      vim.lsp.config('gopls', {
         capabilities = capabilities,
         settings = {
           gopls = {
@@ -33,12 +35,15 @@ return {
           },
         },
       })
-      lspconfig.ts_ls.setup({
+
+      vim.lsp.config('ts_ls', {
         capabilities = capabilities,
       })
-      lspconfig.angularls.setup({
+
+      vim.lsp.config('angularls', {
         capabilities = capabilities,
       })
+
       -- Configure diagnostics
       vim.diagnostic.config({
         virtual_text = true,
@@ -47,9 +52,11 @@ return {
         update_in_insert = false,
         severity_sort = false,
       })
+
       -- Show line diagnostics automatically in hover window
       vim.o.updatetime = 250
       vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
       vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})

@@ -30,7 +30,7 @@ return {
     input = { enabled = true },
     git = { enabled = true },
     picker = { enabled = true },
-    notifier = { enabled = true },
+    notifier = { enabled = false },
     quickfile = { enabled = true },
     scroll = { enabled = false },
     statuscolumn = { enabled = true },
