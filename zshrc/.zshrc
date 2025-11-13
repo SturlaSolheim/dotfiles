@@ -31,6 +31,7 @@ alias nxdw="sudo darwin-rebuild switch --flake ~/nix"
 alias dagens="~/scripts/dagligNotat.sh"
 alias q!="exit"
 alias rundev="mvn spring-boot:run -Dspring-boot.run.profiles=dev"
+alias dot="~/dotfiles/stow-dotfiles.sh"
 
 
 # Enable vim mode
