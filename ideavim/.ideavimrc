@@ -1,6 +1,8 @@
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
+"
+let mapleader=" "
 set scrolloff=8
 
 " Do incremental searching.
@@ -16,6 +18,9 @@ Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
 
+sethandler <j> a:vim
+sethandler <k> a:vim
+set ideamarks
 
 set surround
 set multiple-cursors
@@ -23,8 +28,17 @@ set commentary
 set argtextobj
 set textobj-entire
 set ReplaceWithRegister
-
 set relativenumber
+
+map <leader>t <Action>(Refactorings.QuickListPopupAction)
+
+
+""" Navigation
+nmap <leader>nb <Action>(ShowNavBar)
+nmap <leader>e <Action>(RecentFiles)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fs <Action>(GotoSymbol)
+nmap <leader>fg <Action>(FindInPath)
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
