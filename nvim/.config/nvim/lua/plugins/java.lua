@@ -10,33 +10,44 @@ return {
     "mfussenegger/nvim-dap",
   },
   config = function()
-    -- Setup nvim-java before lspconfig
     require("java").setup({
       root_markers = {
         ".git",
         "pom.xml",
+        "build.gradle",
+        "gradlew",
+      },
+      spring_boot_tools = {
+        enable = true,
+      },
+      jdtls = {
+        setup_dap = false,
       },
     })
 
-    -- Get capabilities from nvim-cmp if available
-    local has_cmp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-    local capabilities = has_cmp and cmp_nvim_lsp.default_capabilities() or vim.lsp.protocol.make_client_capabilities()
-
-    -- Configure jdtls with vim.lsp.config
-    vim.lsp.config('jdtls', {
-      capabilities = capabilities,
+    -- Setup lspconfig after java setup
+    require("lspconfig").jdtls.setup({
+      capabilities = require('cmp_nvim_lsp').default_capabilities(),
       settings = {
         java = {
           configuration = {
-            runtimes = {
-              -- Uncomment and adjust if you have multiple Java versions
-              -- {
-              --   name = "JavaSE-23",
-              --   path = "/usr/local/sdkman/candidates/java/23-tem",
-              -- },
+            maven = {
+              userSettings = vim.fn.expand("/usr/share/maven/conf/settings.xml"),
             },
           },
+          import = {
+            maven = {
+              enabled = true,
+            },
+          },
+          maven = {
+            downloadSources = true,
+          },
         },
+      },
+      cmd_env = {
+        MAVEN_HOME = "/usr/share/maven",
+        M2_HOME = "/usr/share/maven",
       },
     })
   end,
