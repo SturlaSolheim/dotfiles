@@ -32,6 +32,7 @@ alias dagens="~/scripts/dagligNotat.sh"
 alias q!="exit"
 alias rundev="mvn spring-boot:run -Dspring-boot.run.profiles=dev"
 alias dot="~/dotfiles/stow-dotfiles.sh"
+alias signal="~/Nedlastinger/gurk"
 
 
 # Enable vim mode
