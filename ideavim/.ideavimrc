@@ -32,6 +32,13 @@ set relativenumber
 
 map <leader>t <Action>(Refactorings.QuickListPopupAction)
 
+" Paste in visual mode without copying to register
+vnoremap p "_dP
+vnoremap P "_dP
+
+" Optional: Make x and s also delete to black hole register
+nnoremap x "_x
+nnoremap s "_s
 
 """ Navigation
 nmap <leader>nb <Action>(ShowNavBar)
