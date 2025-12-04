@@ -2,9 +2,11 @@
     "layer": "top",
     "position": "top",
     "height": 30,
+    "margin-left": 900,
+    "margin-right": 900,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "battery", "clock"],
+    "modules-right": ["pulseaudio",  "battery", "clock"],
     "sway/window": {
         "max-length": 50
     },
@@ -14,11 +16,6 @@
     },
     "clock": {
         "format": "{:%H:%M %Y-%m-%d}"
-    },
-    "network": {
-        "format-wifi": "{essid} ",
-        "format-ethernet": "{ifname} ",
-        "format-disconnected": "Disconnected ⚠"
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",

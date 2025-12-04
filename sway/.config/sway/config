@@ -1,7 +1,6 @@
 # Set mod key (Mod4 = Super/Windows key, Mod1 = Alt)
 set $mod Mod4
 
-
 # Your preferred terminal
 set $term kitty
 
@@ -10,8 +9,6 @@ set $menu wofi --show drun
 
 # Wallpaper
 output * bg ~/Dokumenter/bakgrunnsbilder/botanisk.jpg fill
-
-
 
 input type:keyboard {
     xkb_layout "no"
@@ -42,7 +39,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
 
 # Lock screen
-#bindsym $mod+l exec swaylock
+bindsym $mod+n exec swaylock
 
 # Screenshots
 bindsym Print exec grim ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png
