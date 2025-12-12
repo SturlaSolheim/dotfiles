@@ -17,6 +17,7 @@ map Q gq
 Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
 
 sethandler <j> a:vim
 sethandler <k> a:vim
