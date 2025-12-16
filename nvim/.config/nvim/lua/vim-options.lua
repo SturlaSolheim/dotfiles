@@ -8,6 +8,7 @@ vim.opt.swapfile = false
 vim.wo.relativenumber = true
 
 vim.opt.wrap = false
+vim.opt.cursorline = true
 
 vim.api.nvim_create_autocmd("InsertLeave", { command = "silent! wall" })
 
@@ -22,3 +23,7 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.wo.number = true
 
+vim.keymap.set('n', '<leader>w', function()
+  vim.wo.wrap = not vim.wo.wrap
+  vim.wo.linebreak = not vim.wo.linebreak
+end, { desc = 'Toggle wrap and linebreak' })

@@ -30,6 +30,7 @@ set argtextobj
 set textobj-entire
 set ReplaceWithRegister
 set relativenumber
+set cursorline
 
 map <leader>t <Action>(Refactorings.QuickListPopupAction)
 
