@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "gopls", "ts_ls", "angularls" }
+        ensure_installed = { "lua_ls", "gopls", "ts_ls", "angularls", "kotlin_language_server" }
       })
     end
   },
@@ -42,6 +42,15 @@ return {
 
       vim.lsp.config('angularls', {
         capabilities = capabilities,
+      })
+
+      vim.lsp.config('kotlin_language_server', {
+        capabilities = capabilities,
+        cmd = { 'kotlin-language-server' },
+        root_dir = vim.fs.root(0, { 'settings.gradle', 'settings.gradle.kts', 'build.gradle', 'build.gradle.kts', 'pom.xml' }),
+        init_options = {
+          storagePath = vim.fn.stdpath('cache') .. '/kotlin_language_server',
+        },
       })
 
       -- Configure diagnostics
