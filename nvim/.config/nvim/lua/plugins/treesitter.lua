@@ -14,6 +14,7 @@ return {
           "scss",
           "javascript",
           "java",
+          "kotlin",
           "typescript",
           "json",
           "lua",
