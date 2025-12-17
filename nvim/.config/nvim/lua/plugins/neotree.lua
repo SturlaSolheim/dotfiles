@@ -10,9 +10,14 @@ return {
   config = function()
     require("neo-tree").setup({
       window = {
-      auto_expand_width = true
+        auto_expand_width = true,
+        mappings = {
+          ["l"] = "open",
+          ["h"] = "close_node",
+        },
       },
       filesystem = {
+
       filtered_items = {
         visible = false, -- hide filtered items on open
         hide_gitignored = true,
@@ -34,7 +39,6 @@ return {
       },
     })
     
-    -- Set keymap here inside the config function
     vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
   end
 }
