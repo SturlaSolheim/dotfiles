@@ -32,7 +32,16 @@ set ReplaceWithRegister
 set relativenumber
 set cursorline
 
+set hlsearch "highlight search result
+set incsearch " incremental search
+set ignorecase
+set smartcase " capital letters = case sensitive
+
 map <leader>t <Action>(Refactorings.QuickListPopupAction)
+
+" Map Leader + h to clear highlights
+nnoremap <silent> <Leader>h :nohlsearch<CR>
+
 
 " Paste in visual mode without copying to register
 vnoremap p "_dP
