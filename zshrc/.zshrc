@@ -3,7 +3,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:/home/local.husbanken.no/hdst/tools"
@@ -17,7 +16,7 @@ export GHOSTTY_RESOURCES=~/.config/ghostty/themes
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git fzf zsh-autosuggestions fzf-tab oc)
+plugins=(git fzf zsh-autosuggestions fzf-tab oc kubectx)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,6 +42,17 @@ bindkey -v
 # Reduce the delay when switching modes (default is 0.4s)
 export KEYTIMEOUT=1
 
+# Velg bilde fra ImageStream og sett det på en deployment
+oc-deploy-image() {
+  local deployment=$(oc get deploymentconfigs.apps.openshift.io -o name | fzf --header="Velg Deployment")
+  local image=$(oc get is -o custom-columns=NAME:.metadata.name,TAGS:.status.tags[*].tag --no-headers | fzf --header="Velg Image:Tag" | awk '{print $1":"$2}')
+  
+  if [ -n "$deployment" ] && [ -n "$image" ]; then
+    echo "Updater $deployment til $image..."
+    oc set image $deployment *= $image
+  fi
+}
+
 # Show vim mode in your prompt (optional)
 # This updates the prompt to show INSERT or NORMAL mode
 function zle-line-init zle-keymap-select {
@@ -67,6 +77,7 @@ function y() {
 
 
 source ~/.zshrc.d/*.zsh
+fortune | cowsay -r | lolcat
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
