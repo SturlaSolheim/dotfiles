@@ -29,7 +29,7 @@ set commentary
 set argtextobj
 set textobj-entire
 set ReplaceWithRegister
-set relativenumber
+"set relativenumber
 set cursorline
 
 set hlsearch "highlight search result
@@ -53,7 +53,7 @@ nnoremap s "_s
 
 """ Navigation
 nmap <leader>nb <Action>(ShowNavBar)
-nmap <leader>e <Action>(RecentFiles)
+nmap <leader><leader> <Action>(RecentFiles)
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fs <Action>(GotoSymbol)
 nmap <leader>fg <Action>(FindInPath)

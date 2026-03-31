@@ -19,10 +19,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git fzf zsh-autosuggestions fzf-tab oc kubectx)
 
 source $ZSH/oh-my-zsh.sh
+source "/opt/homebrew/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh"
 
 # ALIASER
 alias dc="docker compose"
-alias up="sudo dnf up -y"
+alias up="brew update && brew upgrade"
 alias mockdata="dc stop mockdata && dc build mockdata && dc up -d"
 alias ls="eza"
 alias vim="nvim"
