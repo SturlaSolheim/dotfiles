@@ -6,10 +6,12 @@ fi
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:/home/local.husbanken.no/hdst/tools"
-export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
-[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+export PATH="$PATH:$HOME/.local/share/yabridge"
+export PATH="$HOME/.local/wine-9.21-staging-tkg-amd64/bin:$PATH"
+#export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+#[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export GIT_EDITOR=nvim
 export EDITOR=nvim
 export GHOSTTY_RESOURCES=~/.config/ghostty/themes
@@ -35,6 +37,7 @@ alias q!="exit"
 alias rundev="mvn spring-boot:run -Dspring-boot.run.profiles=dev"
 alias dot="~/dotfiles/stow-dotfiles.sh"
 alias signal="~/Nedlastinger/gurk"
+alias bitwig="/home/ssolheim/.local/share/flatpak/app/com.bitwig.BitwigStudio/x86_64/master/682ae4a165200ef954851f62650ba445f22af50252806572cbf8979b525ceedd/files/bitwig-studio"
 
 
 # Enable vim mode
@@ -77,8 +80,8 @@ function y() {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-source ~/.zshrc.d/*.zsh
-fortune | cowsay -r | lolcat
+#source ~/.zshrc.d/*.zsh
+#fortune | cowsay -r | lolcat
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

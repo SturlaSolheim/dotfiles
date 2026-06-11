@@ -6,6 +6,7 @@ vim.g.mapleader = " "
 
 vim.opt.swapfile = false
 vim.wo.relativenumber = true
+vim.opt_local.conceallevel = 2
 
 vim.opt.wrap = false
 vim.opt.cursorline = true
