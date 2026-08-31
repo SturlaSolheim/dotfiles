@@ -10,10 +10,6 @@ set incsearch
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
-
-" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
-
-" Highlight copied text
 Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
@@ -22,13 +18,13 @@ Plug 'easymotion/vim-easymotion'
 sethandler <j> a:vim
 sethandler <k> a:vim
 set ideamarks
-
 set surround
 set multiple-cursors
 set commentary
 set argtextobj
 set textobj-entire
 set ReplaceWithRegister
+set yankring
 "set relativenumber
 set cursorline
 
