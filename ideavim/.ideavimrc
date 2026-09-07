@@ -53,6 +53,7 @@ nmap <leader><leader> <Action>(RecentFiles)
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fs <Action>(GotoSymbol)
 nmap <leader>fg <Action>(FindInPath)
+nmap <leader>fp <Action>(OpenProjectWindows)
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
