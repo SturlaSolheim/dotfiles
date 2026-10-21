@@ -15,6 +15,10 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 
+
+nnoremap <expr> <leader>j (line('$') / 4) . 'j'
+nnoremap <expr> <leader>k (line('$') / 4) . 'k'
+
 sethandler <j> a:vim
 sethandler <k> a:vim
 set ideamarks
@@ -54,6 +58,8 @@ nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fs <Action>(GotoSymbol)
 nmap <leader>fg <Action>(FindInPath)
 nmap <leader>fp <Action>(OpenProjectWindows)
+nmap <leader>sr <Action>(SplitVertically)
+nmap <leader>us <Action>(Unsplit)
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
