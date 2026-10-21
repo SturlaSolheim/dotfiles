@@ -7,6 +7,15 @@ alias ld="lazydocker"
 alias dagens="~/scripts/dagligNotat.sh"
 alias rundev="mvn spring-boot:run -Dspring-boot.run.profiles=dev"
 alias dot="~/dotfiles/stow-dotfiles.sh"
-alias bitwig="/home/ssolheim/.local/share/flatpak/app/com.bitwig.BitwigStudio/x86_64/master/682ae4a165200ef954851f62650ba445f22af50252806572cbf8979b525ceedd/files/bitwig-studio"
 alias mku="cd ~/git/multikanal-utsending && idea1 ."
 alias i="pickIntellij"
+
+# Musikk
+alias bitwig="/home/ssolheim/.local/share/flatpak/app/com.bitwig.BitwigStudio/x86_64/master/682ae4a165200ef954851f62650ba445f22af50252806572cbf8979b525ceedd/files/bitwig-studio"
+alias reaper="QT_QPA_PLATFORM=xcb GDK_BACKEND=x11 /home/ssolheim/reaper/reaper_linux_x86_64/REAPER/reaper"
+alias q128="pw-metadata -n settings 0 clock.force-quantum 128"
+alias q256="pw-metadata -n settings 0 clock.force-quantum 256"
+alias q1024="pw-metadata -n settings 0 clock.force-quantum 1024"
+
+alias performance="sudo cpupower frequency-set -g performance"
+alias powersave="sudo cpupower frequency-set -g powersave"
