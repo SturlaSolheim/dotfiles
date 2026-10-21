@@ -7,3 +7,16 @@ background-blur-radius = 40
 cursor-style-blink = true
 shell-integration-features = cursor,sudo
 gtk-titlebar = true
+
+
+keybind = global:ctrl+alt+shift+t=toggle_quick_terminal
+
+# 2. Position the quick terminal in the exact center of the screen
+quick-terminal-position = center
+
+# 3. (Optional) Customize the size of the centered window (percentage of screen)
+quick-terminal-screen-width = 60%
+quick-terminal-screen-height = 50%
+
+# 4. Hide window borders for a clean overlay look (Optional)
+window-decoration = false

@@ -12,8 +12,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git fzf zsh-autosuggestions fzf-tab oc kubectx)
 
 source $ZSH/oh-my-zsh.sh
-source "/opt/homebrew/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh"
 
+# Dynamically finds the correct fzf-tab path on both macOS and Linux
+if command -v brew &>/dev/null; then
+  source "$(brew --prefix)/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh"
+fi
 
 # Enable vim mode
 bindkey -v
