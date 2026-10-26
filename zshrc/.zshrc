@@ -2,10 +2,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Oppset for å dele configen i flere sider
 for config_file in "$HOME/.zshfiles/"*.zsh; do
   [ -r "$config_file" ] && source "$config_file"
 done
 
+
+zstyle ':omz:update' cooldown 5
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -26,8 +29,6 @@ bindkey -v
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-#source ~/.zshrc.d/*.zsh
-#fortune | cowsay -r | lolcat
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
