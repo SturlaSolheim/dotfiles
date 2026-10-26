@@ -9,6 +9,7 @@ alias rundev="mvn spring-boot:run -Dspring-boot.run.profiles=dev"
 alias dot="~/dotfiles/stow-dotfiles.sh"
 alias mku="cd ~/git/multikanal-utsending && idea1 ."
 alias i="pickIntellij"
+alias backup="rsync -av --delete ~/notater/skatteetaten ~/OneDrive\ -\ Skatteetaten/notater"
 
 # Musikk
 alias bitwig="/home/ssolheim/.local/share/flatpak/app/com.bitwig.BitwigStudio/x86_64/master/682ae4a165200ef954851f62650ba445f22af50252806572cbf8979b525ceedd/files/bitwig-studio"
