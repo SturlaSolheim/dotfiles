@@ -1,9 +1,10 @@
 theme = Afterglow
 font-family = JetBrainsMono Nerd Font
 font-size = 13
-background-opacity = 0.90
+background-opacity = 0.9
+background-blur = true
 mouse-hide-while-typing = true
-background-blur-radius = 40
+background-blur-radius = 20
 cursor-style-blink = true
 shell-integration-features = cursor,sudo
 gtk-titlebar = true
@@ -15,8 +16,9 @@ keybind = global:ctrl+alt+shift+t=toggle_quick_terminal
 quick-terminal-position = center
 
 # 3. (Optional) Customize the size of the centered window (percentage of screen)
-quick-terminal-screen-width = 60%
-quick-terminal-screen-height = 50%
+quick-terminal-size = 1500px,1200px
 
 # 4. Hide window borders for a clean overlay look (Optional)
 window-decoration = false
+
+command = /home/linuxbrew/.linuxbrew/bin/zsh
