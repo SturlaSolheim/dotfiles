@@ -4,7 +4,7 @@ return {
     wiki_dirs = {
       -- neowiki.nvim supports both absolute and tilde-expanded paths
       { name = "Skatteetaten", path = "~/notater/skatteetaten" },
-      { name = "Privat", path = "~/notater/privat" },
+      { name = "Privat", path = "~/jottasync/privat" },
     },
   },
   keys = {

@@ -15,7 +15,7 @@ return {
       -- 1. Legg inn dine egne prosjekter og nøyaktige filstier her
       local mine_prosjekter = {
         { navn = "Skatteetaten", sti = "~/notater/skatteetaten/index.md" },
-        { navn = "privat",         sti = "~/notater/privat/index.md" },
+        { navn = "privat",         sti = "~/jottasync/privat/index.md" },
         { navn = "zshrc",         sti = "~/dotfiles/zshrc/.zshrc" },
         { navn = "ekom",         sti = "~/git/ekom/multikanal-utsending.json" },
       }
