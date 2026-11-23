@@ -1,14 +1,16 @@
-alias dc="docker compose"
 alias up="brew update && brew upgrade"
 alias ls="eza"
 alias vim="nvim"
 alias lg="lazygit"
 alias ld="lazydocker"
-alias dagens="~/scripts/dagligNotat.sh"
 alias rundev="mvn spring-boot:run -Dspring-boot.run.profiles=dev"
 alias dot="~/dotfiles/stow-dotfiles.sh"
-alias mku="cd ~/git/multikanal-utsending && idea1 ."
 alias i="pickIntellij"
+alias src="source ~/.zshrc"
+
+# Jotta-cli
+alias jotta="jotta-cli"
+alias jsync="distrobox enter jotta -- true && podman exec -d -u ssolheim -e HOME=/home/ssolheim jotta /usr/bin/jottad"
 
 # Musikk
 alias bitwig="/home/ssolheim/.local/share/flatpak/app/com.bitwig.BitwigStudio/x86_64/master/682ae4a165200ef954851f62650ba445f22af50252806572cbf8979b525ceedd/files/bitwig-studio"
